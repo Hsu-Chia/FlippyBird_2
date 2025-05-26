@@ -30,6 +30,10 @@ public class Bird_Andy : MonoBehaviour
         birdRigidbody2D.bodyType = RigidbodyType2D.Static;
         state = State.WaitingToStart;
     }
+    private void Start()
+    {
+        Score_Andy.Start(); // ✅ 等 Bird 自己準備好時自己叫分數系統初始化
+    }
 
     // Update is called once per frame
     void Update()
@@ -66,6 +70,7 @@ public class Bird_Andy : MonoBehaviour
     void Jump()
     {
         birdRigidbody2D.linearVelocity = Vector2.up * Jump_Amount;
+        SoundManager_Andy.PlaySound(SoundManager_Andy.Sound.birdJump);
         
     }
 
@@ -73,6 +78,7 @@ public class Bird_Andy : MonoBehaviour
     {
         
         birdRigidbody2D.bodyType = RigidbodyType2D.Static;
+        SoundManager_Andy.PlaySound(SoundManager_Andy.Sound.Lose);
         if (OnDied!=null)OnDied(this, EventArgs.Empty);
     }
 

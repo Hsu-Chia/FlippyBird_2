@@ -18,11 +18,13 @@ using CodeMonkey.Utils;
 public class MainMenuWindow : MonoBehaviour {
 
     private void Awake() {
-        transform.Find("playBtn").GetComponent<Button_UI>().ClickFunc = () => { Loader.Load(Loader.Scene.GameScene); };
-        transform.Find("playBtn").GetComponent<Button_UI>().AddButtonSounds();
+       var playBtn = transform.Find("playBtn").GetComponent<Button_UI>();
+        playBtn.ClickFunc = () => { Loader.Load(Loader.Scene.GameScene); };
+        SoundManager_Andy.AddButtonSounds(playBtn); // ✅ 明確使用 SoundManager_Andy 版本
 
-        transform.Find("quitBtn").GetComponent<Button_UI>().ClickFunc = () => { Application.Quit(); };
-        transform.Find("quitBtn").GetComponent<Button_UI>().AddButtonSounds();
+        var quitBtn = transform.Find("quitBtn").GetComponent<Button_UI>();
+        quitBtn.ClickFunc = () => { Application.Quit(); };
+        SoundManager_Andy.AddButtonSounds(quitBtn); // ✅ 明確使用 SoundManager_Andy 版本
     }
 
 }

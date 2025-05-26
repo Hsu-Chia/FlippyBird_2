@@ -15,6 +15,11 @@ public class GameOverWindow_Andy : MonoBehaviour {
         transform.Find("contentRoot/retryBtn").GetComponent<Button_UI>().ClickFunc = () => {
             Loader_Andy.Load(Loader_Andy.Scene.GameScene);
         };
+        SoundManager_Andy.AddButtonSounds(transform.Find("contentRoot/retryBtn").GetComponent<Button_UI>());
+        transform.Find("contentRoot/mainMenuBtn").GetComponent<Button_UI>().ClickFunc = () => {
+            Loader_Andy.Load(Loader_Andy.Scene.MainMenu);
+        };
+        SoundManager_Andy.AddButtonSounds(transform.Find("contentRoot/mainMenuBtn").GetComponent<Button_UI>());
 
         Hide(); // ✅ 現在只隱藏內容，而不是整個物件
     }

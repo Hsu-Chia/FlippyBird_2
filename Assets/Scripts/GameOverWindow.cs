@@ -26,10 +26,10 @@ public class GameOverWindow : MonoBehaviour {
         highscoreText = transform.Find("highscoreText").GetComponent<Text>();
         
         transform.Find("retryBtn").GetComponent<Button_UI>().ClickFunc = () => { Loader.Load(Loader.Scene.GameScene); };
-        transform.Find("retryBtn").GetComponent<Button_UI>().AddButtonSounds();
+        SoundManager_Andy.AddButtonSounds(transform.Find("retryBtn").GetComponent<Button_UI>());
         
         transform.Find("mainMenuBtn").GetComponent<Button_UI>().ClickFunc = () => { Loader.Load(Loader.Scene.MainMenu); };
-        transform.Find("mainMenuBtn").GetComponent<Button_UI>().AddButtonSounds();
+        SoundManager_Andy.AddButtonSounds(transform.Find("mainMenuBtn").GetComponent<Button_UI>());
 
         transform.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
     }

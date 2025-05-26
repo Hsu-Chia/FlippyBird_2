@@ -7,6 +7,7 @@ public static class Loader_Andy
     {
         GameScene,
         LoadingScene,
+        MainMenu,
     }
     private static Scene targetScene;
 
@@ -26,6 +27,9 @@ public static class Loader_Andy
         {
             case Scene.GameScene:
                 SceneManager.LoadScene("Scenes_Andy/GameScene");
+                break;
+            case Scene.MainMenu:
+                SceneManager.LoadScene("Scenes_Andy/MainMenu");
                 break;
             default:
                 Debug.LogError("❌ Unknown target scene: " + targetScene);

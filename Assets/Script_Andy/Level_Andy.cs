@@ -112,6 +112,7 @@ public class Level_Andy : MonoBehaviour
             {
                 //Pipe passed Bird
                 pipesPassedCount++;
+                SoundManager_Andy.PlaySound(SoundManager_Andy.Sound.Score);
             }
 
             if (pipe.GetXPosition() < PIPE_DESTROY_X_POSITION)
